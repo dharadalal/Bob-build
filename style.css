@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --black:black;
+    --white: white;
+    --cream: #f5f0eb;
+}
+.navbar-container{
+    background-color: var(--cream);
+}
+.navbar{
+    padding:10px 10px;
+}
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+.nav-logo-image{
+    height: 40px;
+    width: 100px;
+}
+.nav-searchinput{
+    height: 30px;
+    width: 200px;
+    position: relative;
+    text-align: center;
+}
+i{
+    position: absolute;
+    
+}
