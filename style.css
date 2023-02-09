@@ -9,7 +9,7 @@
     --cream: #f5f0eb;
     --brown: #756c67;
 }
-h2{
+h2.heading{
     text-align: center;
     color:#756c67;
     font-size:2rem;
@@ -19,32 +19,35 @@ h2{
 /* start of navbar */
 .navbar-container{
     background-color: var(--cream);
-    width:100%;
-}
-.navbar{
     padding:10px 10px;
-
 }
 .navbar-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+.nav-searchbar{
+    position: relative;
+}
 .nav-logo-image{
-    height: 40px;
+    /* ahiya apde je logo ni height api che e badhi screen ma e j rehse */
+    /* image ma usually height auto j rakhiye */
     width: 100px;
 }
+ /* aanw relative natu  aapyu etle keme n koi child nathi */
 .nav-searchinput{
     height: 30px;
     width: 200px;
-    position: relative;
     text-align: center;
 }
 .nav-searchbar i{
+    /* z-index work karva mate posiiton apvi pade */
+    /* jyare absoulute pos hoy tyare manually stlye apvi apde element center lavama k all  */
     position: absolute;
     z-index: 1;
-    padding: 5px 10px;
-    text-align: center;
+    top:25%;
+    padding-left: 10px;
+    /* absolute position api che etle ahiya text align work na kare like auotmaric vastu work na kare eg.margin nall   */
 }
 .navbar-menu{
     display: flex;
@@ -63,55 +66,69 @@ a:hover{
 color: var(--brown);
 text-decoration: underline;
 }
-.menu-drawer-container{
+.menu-icon{
     display: none;
 }
 /* enf of the navbar */
 
-/* start of header  */
-.header-container{
-    width:100%;
-}
 .header{
     padding:10px 10px;
     text-align: center;
     color:#756c67;
 }
+
 /* hero section */
 
-.hero-image-container{
-    position: relative;
-    width:100%; 
+/* hero section */
+
+/* .hero-image-container{
+    position: relative;  
     height:100%;
-    /* background-color: yellow; */
-   background:url(https://katebuilds.ca/wp-content/uploads/2022/06/20220523_175718.jpg) no-repeat;
-   object-fit: fill;
+    background:url(https://katebuilds.ca/wp-content/uploads/2022/06/20220523_175718.jpg) no-repeat;
 }
-.hero-image-container{
-    display: flex;
-    align-items: flex-end;
-    justify-items: flex-end;
-}
-/* .hero-image{
-    width:100%;
-    height:500px;
-    object-fit: cover;
-} */
+
 .image-content{
     position: absolute;
+    top:60%;
+    left:10%;
+    right:10%;
+}
+
+.image-content p{
     background-color: var(--white);
-    z-index: 1;
-    color: var(--black);
+    color: lightslategray;
     font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 100px;
+    padding:30px;
+    letter-spacing: 1px;
+} */
+
+.hero {
+    height: 70vh;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 100%;
+    object-position: 0 0;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 10%;
+    padding: 2rem;
+}
+
+.hero-content p {
+    background-color: white;
+    padding: 2rem;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
 /* blog heading */
-.blog-container{
-    margin-top:15px;
-    width:100%;
-}
+
 .blog-content{
     padding:20px 20px;
 }
@@ -120,7 +137,6 @@ text-decoration: underline;
 
 /* blogs cards */
 .card-container{
-    height:auto;
     margin-top: 15px;
     display: flex;
     justify-content: space-evenly;
@@ -130,17 +146,20 @@ text-decoration: underline;
 }
 .cards-content{
     max-width:400px;
-    margin:40px auto;
+    margin:40px 10px;
     border-radius: 10px; 
     background-color: var(--white);
     transition: all 200ms ease-in-out;
-    box-shadow: rgb(0 0 0 / 30%) 0px 2px 4px 0px;
+    box-shadow: rgba(26, 25, 25, 0.3) 0px 2px 4px 0px;
 }
 .cards-content:hover{
-    transform: scale(1.05) translate(0px, -8px);;
+    transform: scale(1.05) translate(0px, -8px);
 }
 .image{
-    width:100%;
+    /* width ma screen size nani thay k moit that e size sma ej reh
+    jyare max-width hoy to screen size change thay e rite max-width change thay e.g screen nani thay to 
+    img nani thay */
+    max-width:100%;
     border-radius: 10px;   
 }
 .content-container{
@@ -172,12 +191,11 @@ text-decoration: underline;
     background-color: #756c67;
     color:var(--white);
 }
-/* end of  */
+/* end of cards */
 
 /* relation container */
 .relation-container{
     margin-top:30px;
-    width:100%;
 }
 
 .relation-content{
@@ -187,7 +205,7 @@ text-decoration: underline;
 .relation-data{
     margin-top:20px;
     font-size:1.2rem;
-    line-height:  1.2em;
+    /* line-height: 1.2em; */
 }
 
 .build-relation{
@@ -202,12 +220,10 @@ text-decoration: underline;
     background-color: #756c67;
     color:var(--white);
 }
-
 /*end of relation container */
 
-/* gallary of photos */
+/* gallary */
 .gallary-container{
-    width:100%;
     padding-bottom: 50px;;
     margin-top:20px;
     background-color:var(--cream);
@@ -223,11 +239,14 @@ text-decoration: underline;
     margin-bottom: 50px;
     align-items: flex-start;
 }
-.gallary-image{
-    max-width:300px;
-    max-height:300px;   
-}
 
+.gallary-image{
+    width:300px;
+    height:300px;
+    object-fit:cover;
+    object-position: 0 0;
+}
+/* end of gallary  */
 /* footer */
 .footer-container{
     background-color:var(--cream);
@@ -236,11 +255,11 @@ text-decoration: underline;
 .footer-content{
     display: grid;
     gap:10px;
-   grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-left:20px;;
 }
 .footer-logo-image{
-    width:80%;
-    height:100%;
+    max-width: 200px;
 }
 
 .info p{
@@ -258,44 +277,94 @@ text-decoration: underline;
     margin-top:20px;
 }
 .links{
-    font-size:1rem;
+    font-size:1.2rem;
     line-height: 1.4rem;
     color:#756c67;
 }
 .contact{
+    
     color:#756c67;
     font-size:1.4rem;
     line-height: 1.4rem;
 }
 .contact-content{
     margin-top:20px;
-    font-size:1rem;
+    font-size:1.2rem;
     line-height: 1.4rem;
     margin-bottom: 1rem;
     color:#756c67;
 }
-.home-link{
+.open-modal{
     text-decoration: none;
     font-size:1rem;
+    background-color: transparent;
     color:#756c67;
+    border: none;
+    cursor: pointer;
+}
+.open-modal:hover{
+    text-decoration: underline;
 }
 
-/* modal */
-.modal{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+/* menu drawer */
+.menu-icon{
+    display: none;
+}
+.drawer-container.hide{
+   visibility: hidden;
+}
+.drawer-content.hide{
+    visibility: hidden;
+}
+.nav-data{
+    padding-top: 20px;
+}
+.logo-image{
+    max-width:100%;
 }
 
+/* Modal */
+.submit-btn{
+    font-size: 1rem;
+    transition: background-color .5s ease-in-out , color .5s ease-in-out;
+    padding:0.5rem;
+    margin-top:20px;
+}
+.submit-btn:hover{
+    color:white;
+    background-color: grey;
+}
+.name{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+ .modal.hide-modal {
+    display: none;   
+} 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+   bottom:0;
+    width: 100%;
+    height: 100%;
+}
 .modal-container {
-    background-color: var(--cream);
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: black;
     font-size: 1.2em;
     padding: 2rem;
@@ -303,31 +372,120 @@ text-decoration: underline;
     display: flex;
     flex-direction: column;
 }
-
 .modal-close-btn{
+    font-size: 1.2rem;
     align-self: flex-end;
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-bottom: 20px;
 }
-.submit-btn{
-    margin-top:30px;
+.drawer-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    height:100%
+}
+    
+.drawer-backdrop{
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    inset: 0px;
+    justify-content: center;
+    align-items: center;
+}
+.drawer-content{
+    width:250px;
+    color:var(--black);
+    background-color: var(--cream);
+    min-height:100%;
+    position:fixed;
+    z-index: 1;
+    transform: translateX(-300px); 
+    transition: transform .5s ease-in-out;   
+ }  
+.drawer-content.show{
+    transform: none;
+}
+.close-navbtn{
+    border:none;
+    background-color: transparent;
+    align-self: flex-end;
+    width:40px;
+    height: 40px;
+    font-size: 1.2rem;;
+    margin: 10px 10px;;
     cursor: pointer;
-    border : 2px solid var(--brown);
-    padding:5px 20px;
+    transition: background-color .5s ease-in-out , color .5s ease-in-out;
 }
-.hide{
-display:none;
+.close-navbtn:hover{
+    color:white;
+    background-color: grey;
+}
+.drawer-content a{ 
+    display: block;
+    padding: 15px 15px;
+    line-height: 2rem;
+    color:var(--black);
+    text-decoration:none;
+    font-size:1.2rem;
+    text-align:center;
+    transition: background-color .5s ease-in-out , color .5s ease-in-out;
+}
+a:hover{
+    background-color: grey;
 }
 
-.modal-backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+/* make responsive  */
+/* If the screen size is 600px or less, set the below style*/
+/* ahiya 0-600px sudhi ni screen size hase tyare j aa dispaly karse  */
+@media screen and (max-width: 600px) {
+    .nav-logo-image{
+        display: none;
+    }
+    .navbar-menu a{
+        display: none;
+    }
+    .menu-icon{
+        display: initial;
+        color: var(--black);
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 50%;
+        width:40px;
+        height: 40px;
+        background-color: transparent;
+    }
+    .menu-icon:hover{
+    background-color: var(--brown) ;   
+    color:var(--white);
+    }
+    .logo-image{
+        height: 20%;
+        width: 50%;
+    } 
+    .nav-data{
+        display:flex;
+        justify-content: space-between;
+        z-index: 1;
+    }
+    /* header section  */
+    .header h2{
+        display: block;
+        font-size:1rem;
+    }
+    /* hero-content */
+    .hero{
+        height: auto;
+    }
+    .hero-content{
+        position: unset;
+        padding:0;
+    }
 }
