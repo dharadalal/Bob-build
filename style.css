@@ -34,7 +34,7 @@ h2.heading{
     /* image ma usually height auto j rakhiye */
     width: 100px;
 }
- /* aanw relative natu  aapyu etle keme n koi child nathi */
+ /* aane relative natu  aapyu etle keme n koi child nathi */
 .nav-searchinput{
     height: 30px;
     width: 200px;
@@ -59,12 +59,13 @@ h2.heading{
     text-decoration: none;
     color: var(--black);
 }
-a:visited{
+.navbar-menu a:visited{
     color: var(--black);
 }
-a:hover{
+.navbar-menu a:hover{
 color: var(--brown);
 text-decoration: underline;
+background-color: transparent;
 }
 .menu-icon{
     display: none;
@@ -78,29 +79,6 @@ text-decoration: underline;
 }
 
 /* hero section */
-
-/* hero section */
-
-/* .hero-image-container{
-    position: relative;  
-    height:100%;
-    background:url(https://katebuilds.ca/wp-content/uploads/2022/06/20220523_175718.jpg) no-repeat;
-}
-
-.image-content{
-    position: absolute;
-    top:60%;
-    left:10%;
-    right:10%;
-}
-
-.image-content p{
-    background-color: var(--white);
-    color: lightslategray;
-    font-size: 1.4rem;
-    padding:30px;
-    letter-spacing: 1px;
-} */
 
 .hero {
     height: 70vh;
@@ -205,7 +183,6 @@ text-decoration: underline;
 .relation-data{
     margin-top:20px;
     font-size:1.2rem;
-    /* line-height: 1.2em; */
 }
 
 .build-relation{
@@ -238,6 +215,14 @@ text-decoration: underline;
     overflow-x : scroll;
     margin-bottom: 50px;
     align-items: flex-start;
+}
+/* to hide scrollbar in opera,safari and chrome */
+.gallary-content::-webkit-scrollbar{
+    display: none;
+  }
+
+.gallary-content{
+    scrollbar-width: none;
 }
 
 .gallary-image{
@@ -325,10 +310,16 @@ text-decoration: underline;
 
 /* Modal */
 .submit-btn{
-    font-size: 1rem;
     transition: background-color .5s ease-in-out , color .5s ease-in-out;
-    padding:0.5rem;
-    margin-top:20px;
+    padding: 10px 10px;
+    margin: 16px 0px 16px;
+    font-size:1rem;
+    background-color: var(--white);
+    border: 2px solid var(--brown);
+    border-radius: 5px;
+    text-transform: capitalize;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
 }
 .submit-btn:hover{
     color:white;
@@ -336,13 +327,13 @@ text-decoration: underline;
 }
 .name{
     margin-top: 20px;
-    margin-bottom: 10px;
-    
+    margin-bottom: 10px; 
 }
 .input-name{
     border:1px solid black;
     height: 30px;
     width: 200px;
+    border-radius: 5px;
 }
  .modal.hide-modal {
     display: none;   
@@ -367,7 +358,7 @@ text-decoration: underline;
 }
 .modal-container {
     position: absolute;
-    background-color: white;
+    background-color:var(--cream);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
